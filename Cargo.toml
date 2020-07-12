@@ -9,7 +9,7 @@ version = "0.0.1"
 edition = "2018"
 
 [dependencies]
-nrf52832-hal = { path = "../../nrf52832-hal" }
+nrf52832-hal = "0.10.0"
 
 [dev-dependencies]
 cortex-m-rt = "0.6.12"
