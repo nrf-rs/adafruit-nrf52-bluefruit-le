@@ -1,16 +1,16 @@
 #![no_std]
 
-pub mod prelude {
-    pub use nrf52832_hal::prelude::*;
-}
-
 use nrf52832_hal::{
-    gpio::{p0, Floating, Input, Level, Output, Pin, PushPull},
+    gpio::{Level, Output, p0, Pin, PushPull},
     pac::{self as pac, CorePeripherals, Peripherals},
     uarte, Uarte,
 };
-
+use nrf52832_hal::gpio::Disconnected;
 use nrf52832_hal::prelude::OutputPin;
+
+pub mod prelude {
+    pub use nrf52832_hal::prelude::*;
+}
 
 #[allow(non_snake_case)]
 pub struct Board {
@@ -389,29 +389,29 @@ impl Led {
 
 /// Maps the pins to the names printed on the device
 pub struct Pins {
-    pub a0: p0::P0_02<Input<Floating>>,
-    pub a1: p0::P0_03<Input<Floating>>,
-    pub a2: p0::P0_04<Input<Floating>>,
-    pub a3: p0::P0_05<Input<Floating>>,
-    pub a4: p0::P0_28<Input<Floating>>,
-    pub a5: p0::P0_29<Input<Floating>>,
-    pub sck: p0::P0_12<Input<Floating>>,
-    pub mosi: p0::P0_13<Input<Floating>>,
-    pub miso: p0::P0_14<Input<Floating>>,
-    pub dfu: p0::P0_20<Input<Floating>>,
-    pub frst: p0::P0_22<Input<Floating>>,
-    pub d16: p0::P0_16<Input<Floating>>,
-    pub d15: p0::P0_15<Input<Floating>>,
-    pub d7: p0::P0_07<Input<Floating>>,
-    pub d11: p0::P0_11<Input<Floating>>,
-    pub a7: p0::P0_31<Input<Floating>>,
-    pub a6: p0::P0_30<Input<Floating>>,
-    pub d27: p0::P0_27<Input<Floating>>,
-    pub scl: p0::P0_26<Input<Floating>>,
-    pub sda: p0::P0_25<Input<Floating>>,
+    pub a0: p0::P0_02<Disconnected>,
+    pub a1: p0::P0_03<Disconnected>,
+    pub a2: p0::P0_04<Disconnected>,
+    pub a3: p0::P0_05<Disconnected>,
+    pub a4: p0::P0_28<Disconnected>,
+    pub a5: p0::P0_29<Disconnected>,
+    pub sck: p0::P0_12<Disconnected>,
+    pub mosi: p0::P0_13<Disconnected>,
+    pub miso: p0::P0_14<Disconnected>,
+    pub dfu: p0::P0_20<Disconnected>,
+    pub frst: p0::P0_22<Disconnected>,
+    pub d16: p0::P0_16<Disconnected>,
+    pub d15: p0::P0_15<Disconnected>,
+    pub d7: p0::P0_07<Disconnected>,
+    pub d11: p0::P0_11<Disconnected>,
+    pub a7: p0::P0_31<Disconnected>,
+    pub a6: p0::P0_30<Disconnected>,
+    pub d27: p0::P0_27<Disconnected>,
+    pub scl: p0::P0_26<Disconnected>,
+    pub sda: p0::P0_25<Disconnected>,
 }
 
 pub struct NFC {
-    pub nfc1: p0::P0_09<Input<Floating>>,
-    pub nfc2: p0::P0_10<Input<Floating>>,
+    pub nfc1: p0::P0_09<Disconnected>,
+    pub nfc2: p0::P0_10<Disconnected>,
 }
